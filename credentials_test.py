@@ -1,5 +1,5 @@
-import unittest # Importing the unittest module
-from credentials import Credentials # Importing the Credentials  class
+import unittest  # Importing the unittest module
+from credentials import Credentials  # Importing the Credentials  class
 
 
 class TestCredentials(unittest.TestCase):
@@ -9,12 +9,13 @@ class TestCredentials(unittest.TestCase):
     Args:
         unittest.TestCase : test class for python that helps create test cases for the application 
     """
+
     def setUp(self):
         """
         set up method will run before each test case
         """
         # creating the credential object
-        self.new_credentials = Credentials("ekirapa","gmail","e@g.c")
+        self.new_credentials = Credentials("ekirapa", "gmail", "e@g.c")
 
     def tearDown(self):
         """
@@ -26,18 +27,18 @@ class TestCredentials(unittest.TestCase):
         """
         testcase: testing to see whether object is well initialised
         """
-        self.assertEqual( self.new_credentials.user_name, "ekirapa")
-        self.assertEqual( self.new_credentials.credentials_name, "gmail")
-        self.assertEqual( self.new_credentials.credentials_password, "e@g.c")
+        self.assertEqual(self.new_credentials.user_name, "ekirapa")
+        self.assertEqual(self.new_credentials.credentials_name, "gmail")
+        self.assertEqual(self.new_credentials.credentials_password, "e@g.c")
 
     def test_save_credentials(self):
         """
         test to see whether user is saved to user list
         """
-        
+
         self.new_credentials.save_credentials()
 
-        self.assertEqual( len(Credentials.credentials_list), 1)
+        self.assertEqual(len(Credentials.credentials_list), 1)
 
     def test_save_multiple_credentials(self):
         """
@@ -46,24 +47,24 @@ class TestCredentials(unittest.TestCase):
 
         generated_password = self.new_credentials.generated_password()
 
-        self.assertEqual ( len(generated_password), 10)
-    
+        self.assertEqual(len(generated_password), 10)
+
     def test_display_credentials(self):
         """
         test to see if user can list all saved credentials
         """
-        #saving the new credentials 
+        # saving the new credentials
         self.new_credentials.save_credentials()
 
         test_credentials = Credentials("joseph", "outlook", "outlook12")
 
         test_credentials.save_credentials()
 
-        test_credentials = Credentials("joseph", "glassdoor","glassy05")
+        test_credentials = Credentials("joseph", "glassdoor", "glassy05")
 
         test_credentials.save_credentials()
 
-        self.assertEqual( len(Credentials.display_credentials("joseph")), 2)
+        self.assertEqual(len(Credentials.display_credentials("joseph")), 2)
 
     def test_credentials_exist(self):
         """
@@ -72,7 +73,8 @@ class TestCredentials(unittest.TestCase):
 
         self.new_credentials.save_credentials()
 
-        test_credentials = Credentials("joseph","outlook","outlook12") # new credentials
+        test_credentials = Credentials(
+            "joseph", "outlook", "outlook12")  # new credentials
 
         test_credentials.save_credentials()
 
@@ -80,3 +82,22 @@ class TestCredentials(unittest.TestCase):
         credentials_exists = Credentials.credentials_exists("outlook")
 
         self.assertTrue(credentials_exists)
+
+    def test_find_credentials(self):
+        """
+        test to check if we can find credentials by name and display information
+        """
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials(
+            "emily", "gmail", "fecebook22")  # new credentials
+        test_credentials.save_credentials()
+
+        found_credentials = Credentials.find_credentials("gmail", "fecebook")
+
+        self.assertEqual(found_credentials.credentials_name,
+                         test_credentials.credentials_name)
+
+
+if __name__ == '__main__':
+    unittest.main()
