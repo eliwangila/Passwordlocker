@@ -1,14 +1,16 @@
 import unittest
-from credentials import Credentials # impoting the credentials class 
+from credentials import Credentials  # impoting the credentials class
+
+
 class User:
     """
     Class that generates new instances of user accounts 
     """
 
-    # start 
-    user_list = [] # Empty user list 
-    def __init__(self,user_name,user_password):
+    # start
+    user_list = []  # Empty user list
 
+    def __init__(self, user_name, user_password):
         '''
         __init__ method to define the properties of a User object
 
@@ -26,26 +28,27 @@ class User:
         """
         User.user_list.append(self)
 
-        #finding a user's credentials
+        # finding a user's credentials
     @classmethod
-    def find_credentials (cls, name ):
+    def find_credentials(cls, name):
         """
         checks correct importation
-        
+
         Args:
             name: credentials name
-        
+
         Returns:
             Boolean : True / False depending on if the credential exists or not
         """
-        
-        #to search in the user list
+
+        # to search in the user list
         for credentials in Credentials.credentials_list:
             if credentials.credentials_name == name:
                 return True
-        
+
         return False
-    @classmethod 
+
+    @classmethod
     def log_in(cls, name, password):
         """
         method for user to log into their accounts
@@ -59,7 +62,7 @@ class User:
             False: if the name or password incorrect
         """
 
-        # search for the user list 
+        # search for the user list
         for user in cls.user_list:
             if user.user_name == name and user.user_password == password:
                 return Credentials.credentials_list
@@ -80,7 +83,7 @@ class User:
         method that checks if a user exists in the user list
         Args:
             name: name of the user to search 
-        
+
         Returns:
             Boolean: true/false depending on whether  user exists
         """
@@ -91,6 +94,6 @@ class User:
 
         return False
 
-        
+
 if __name__ == '__main__':
     unittest.main()
