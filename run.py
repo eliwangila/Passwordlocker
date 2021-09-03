@@ -111,13 +111,13 @@ def display_credentials(password):
     return Credentials.display_credentials(password)
 
 
-# def create_generated_password(name):
-#     '''
-#     Function that generates a password for the user 
+def create_generated_password(name):
+    '''
+    Function that generates a password for the user 
 
-#     Args:
-#         name : the name of the account
-#     '''
-#     password = Credentials.generated_password()
+    Args:
+        name : the name of the account
+    '''
+    password = Credentials.generated_password()
 
-#     return password
+    return password
