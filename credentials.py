@@ -82,4 +82,32 @@ class Credentials:
             if credentials.credentials_name == credentials_name:
                 return True 
 
-        return False 
+        return False
+
+    #method to find credentials
+    @classmethod
+    def find_credentials(cls, credentials_name, credentials_password):
+        """
+        method that takes in credentials name and returns the credentials entry saved.
+
+        Args
+            name: is the name of the platform e.g facebook that a user has saved in the application
+        Returns :
+            credentials name and password that matches the input given.
+        """
+
+        for credentials in cls.credentials_list:
+            if credentials_name == credentials_name and credentials_password == credentials_password:
+                return credentials
+
+    # deleting credentials
+    @classmethod
+    def delete_credentials(credentials_name, credentials_password):
+        """
+        method that deletes credentials account that user no longder needs
+        """
+        Credentials.credentials_list.remove()
+
+
+if __name__ == '__main__':
+    unittest.main() 
