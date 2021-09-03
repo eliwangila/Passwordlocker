@@ -30,25 +30,25 @@ class TestCredentials(unittest.TestCase):
         self.assertEqual( self.new_credentials.credentials_name, "gmail")
         self.assertEqual( self.new_credentials.credentials_password, "e@g.c")
 
-    # def test_save_credentials(self):
-    #     """
-    #     test to see whether user is saved to user list
-    #     """
+    def test_save_credentials(self):
+        """
+        test to see whether user is saved to user list
+        """
         
-    #     self.new_credentials.save_credentials()
+        self.new_credentials.save_credentials()
 
-    #     self.assertEqual( len(Credentials.credentials_list), 1)
+        self.assertEqual( len(Credentials.credentials_list), 1)
 
-    # def test_save_multiple_credentials(self):
-    #     """
-    #     test case: checking to see if multiple credentials can be saved to credentials list
-    #     """
+    def test_save_multiple_credentials(self):
+        """
+        test case: checking to see if multiple credentials can be saved to credentials list
+        """
 
-    #     generated_password = self.new_credentials.generated_password()
+        generated_password = self.new_credentials.generated_password()
 
-    #     self.assertEqual ( len(generated_password), 10)
+        self.assertEqual ( len(generated_password), 10)
     
-    # def test_display_credentials(self):
-    #     """
-    #     test to see if user can list all saved credentials
-    #     """
+    def test_display_credentials(self):
+        """
+        test to see if user can list all saved credentials
+        """
