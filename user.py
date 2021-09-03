@@ -1,4 +1,5 @@
-
+import unittest
+from credentials import Credentials # impoting the credentials class 
 class User:
     """
     Class that generates new instances of user accounts 
