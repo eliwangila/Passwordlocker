@@ -52,3 +52,31 @@ class TestCredentials(unittest.TestCase):
         """
         test to see if user can list all saved credentials
         """
+        #saving the new credentials 
+        self.new_credentials.save_credentials()
+
+        test_credentials = Credentials("joseph", "outlook", "outlook12")
+
+        test_credentials.save_credentials()
+
+        test_credentials = Credentials("joseph", "glassdoor","glassy05")
+
+        test_credentials.save_credentials()
+
+        self.assertEqual( len(Credentials.display_credentials("joseph")), 2)
+
+    def test_credentials_exist(self):
+        """
+        Test to check if we can return boolean for credentials not found
+        """
+
+        self.new_credentials.save_credentials()
+
+        test_credentials = Credentials("joseph","outlook","outlook12") # new credentials
+
+        test_credentials.save_credentials()
+
+        # with use of contact exist method
+        credentials_exists = Credentials.credentials_exists("outlook")
+
+        self.assertTrue(credentials_exists)
