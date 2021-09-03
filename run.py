@@ -121,3 +121,19 @@ def create_generated_password(name):
     password = Credentials.generated_password()
 
     return password
+
+def find_credentials(credentials_name, credentials_password):
+    """
+    function to fund credentials based on credentials name given
+    """
+    return Credentials.find_credentials(credentials_name, credentials_password)
+
+
+def delete_credentials(name):
+    """"
+    Function to delete credentials no longer required
+
+    Args:
+        name : the name of the credentials
+    """
+    Delete = Credentials.delete_credentials()
