@@ -159,10 +159,10 @@ def main():
         loop that is running the entire epplication 
         """
         print("""Short codes:
-        cu - Create a password Locker account \n
-        du - Display names of current password locker users \n
-        lg - Log into your account on password locker \n
-        ex - Exit the password locker account """)
+        Cu - Create a password Locker account \n
+        Di - Display names of current password locker users \n
+        Lg - Log into your account on password locker \n
+        Ex - Exit the password locker account """)
 
         # taking short codes from the user
         short_code = input().lower()

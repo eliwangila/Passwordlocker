@@ -56,11 +56,11 @@ class TestCredentials(unittest.TestCase):
         # saving the new credentials
         self.new_credentials.save_credentials()
 
-        test_credentials = Credentials("joseph", "outlook", "outlook12")
+        test_credentials = Credentials("joseph", "smith", "doe12")
 
         test_credentials.save_credentials()
 
-        test_credentials = Credentials("joseph", "glassdoor", "glassy05")
+        test_credentials = Credentials("joseph", "jane", "joy05")
 
         test_credentials.save_credentials()
 
@@ -74,12 +74,12 @@ class TestCredentials(unittest.TestCase):
         self.new_credentials.save_credentials()
 
         test_credentials = Credentials(
-            "joseph", "outlook", "outlook12")  # new credentials
+            "joseph", "smith", "doe12")  # new credentials
 
         test_credentials.save_credentials()
 
         # with use of contact exist method
-        credentials_exists = Credentials.credentials_exists("outlook")
+        credentials_exists = Credentials.credentials_exists("smith")
 
         self.assertTrue(credentials_exists)
 
