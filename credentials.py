@@ -32,3 +32,54 @@ class Credentials:
         method through which the application saves the user credentials to credentials list
         """
         Credentials.credentials_list.append(self)
+    #generating password for the user 
+    @classmethod
+    def generated_password(cls):
+        """
+        this method will generate a random alphanumeric password for the user 
+        """
+        #length of password to be generated 
+        size = 10
+        
+        # random alphanumeric generation
+        alphanumeric = string.ascii_lowercase + string.digits + string.ascii_uppercase
+
+        #now to create the password
+        password = "".join( choice(alphanumeric) for num in range(size))
+
+        return password
+
+    # method to display the credentials
+    @classmethod
+    def display_credentials(cls, user_name):
+        """
+        method that will return the credentials list
+
+        Args:credentials_email = the email of the credentials account to be linked with the account
+            password  : the user password
+        """
+        user_credentials_list = []
+        
+        for credentials in cls.credentials_list:
+            if credentials.user_name == user_name:
+                user_credentials_list.append(credentials)
+
+        return user_credentials_list
+
+    @classmethod
+    def credentials_exists(cls, credentials_name):
+        """
+        method to check existense of a credentials
+        
+        Args
+            name: name of credentials to be searched
+        
+        Returns:
+            Boolean: true/ false subject to whether the credentials exist
+        """
+
+        for credentials in cls.credentials_list:
+            if credentials.credentials_name == credentials_name:
+                return True 
+
+        return False 
