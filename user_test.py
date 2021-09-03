@@ -30,3 +30,39 @@ class TestUser(unittest.TestCase):
 
         self.assertEqual( self.new_user.user_name, "ekirapa")
         self.assertEqual( self.new_user.user_password, "e347308")
+
+    def test_log_in(self):
+        """
+        test to establish whether user can log into their credentials
+        """
+        #start by saving user
+        self.new_user.save_user()
+
+        test_user = User("amon","marry")
+
+        test_user.save_user()
+
+        found_credentials = User.log_in("amon","marry")
+
+        self.assertEqual( found_credentials, Credentials.credentials_list )
+
+    def test_user_exists(self):
+        """
+        test to check if we can return return boolean if user does not exist
+        """
+
+        #first we save a user
+        self.new_user.save_user()
+        
+        test_user = User("ekirapa","e347308") #new user
+
+        test_user.save_user()
+
+        #then with the existing contact
+        user_exists = User.user_exists("ekirapa")
+
+        self.assertTrue(user_exists)
+        
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)
