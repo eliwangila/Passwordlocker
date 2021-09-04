@@ -1,9 +1,9 @@
 ##  Name of Project.
     Password Locker
-    This project was generated with Python 3.9.6
+    This project was generated with Python 3.8
 
 ##  Author
-    **Eli Wangila**
+    Eli Wangila on 4 September 2021
 
 ## Description
 
@@ -25,11 +25,12 @@ The user will be met with the following commands while signing in:
     -   Your project must have a test class that test each individual method in your classes.
 
 ##  Technologies used
-    Python 3.8 
+    Python 3.8
+    pip install pyfiglet==0.7
 
 
 ## Set-up and Installation
-- Clone the Repo
+- Clone the Repo https://github.com/eliwangila/Passwordlocker.git
 - Install python 3.8
 - Run `python3.8 run.py`
 
