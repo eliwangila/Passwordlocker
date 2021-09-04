@@ -159,10 +159,10 @@ def main():
         loop that is running the entire epplication 
         """
         print("""Short codes:
-        Cu - Create a password Locker account \n
-        Di - Display names of current password locker users \n
-        Lg - Log into your account on password locker \n
-        Ex - Exit the password locker account """)
+        cu - Create a password Locker account \n
+        di - Display names of current password locker users \n
+        lg - Log into your account on password locker \n
+        ex - Exit the password locker account """)
 
         # taking short codes from the user
         short_code = input().lower()
@@ -184,7 +184,7 @@ def main():
 
             print("\n")
             print(
-                f"Welcome {user_name} Your account has been created successfully! to Password Locker.")
+                f"Welcome {user_name} Your account has been created successfully! to Password Locker.\n")
 
         elif short_code == "du":
             """
@@ -192,7 +192,7 @@ def main():
             """
             if display_users():
                 print("\n")
-                print("Below is the list of current users of password locker 👇")
+                print("Below is the list of current users of password locker 👇\n")
                 print("*"*10)
 
                 for user in display_users():
@@ -200,7 +200,7 @@ def main():
                     print("*"*10)
             else:
                 print("\n")
-                print("password locker does not have a user yet. \n  Be the first user")
+                print("password locker does not have a user yet. \n  Be the first User")
                 print("\n")
 
         elif short_code == "lg":
@@ -218,15 +218,15 @@ def main():
 
             if user_log_in(user_name, user_password) == None:
                 print("\n")
-                print("invalid user name or password, try again or create a new account")
+                print("Invalid user name or password, try again or Create a New Account")
                 print("\n")
 
             else:
 
                 user_log_in(user_name, user_password)
                 print("\n")
-                print(f"""Welcome {user_name} You have successfully logged into your credentials\n 
-                use the following short codes to navigate""")
+                print(f"""Welcome {user_name} You have successfully logged into your Account\n 
+                *Use the following short codes to navigate*""")
 
                 while True:
                     """
@@ -259,7 +259,7 @@ def main():
 
                         print("\n")
                         print(
-                            f"Credentials for {credentials_name} have been successfully saved !")
+                            f"Credentials for {credentials_name} have been successfully saved !\n")
                         print("\n")
 
                     elif short_code == "dc":
@@ -317,13 +317,13 @@ def main():
                                 credentials_name, credentials_password)
                             # print(f" {delete_credentials_name}")
                             print(
-                                f"Your stored credentials for: {credentials_name} has been deleted Successfully")
+                                f"Your stored credentials for: {credentials_name} has been deleted Successfully \n")
                         else:
-                            print(" ⚠️ That credentials does not exist ⚠️ ")
+                            print(" ⚠️ That Credentials does not Exist ⚠️ ")
 
                     elif short_code == "ext":
                         print(
-                            f"Thank you {user_name} for using password locker. see you soon ")
+                            f"Thank you {user_name} for using Password Locker.See You Again !")
                         print("\n")
                         break
 
