@@ -3,7 +3,7 @@
     This project was generated with Python 3.8
 
 ##  Author
-    Eli Wangila on 4 September 2021
+    Eli Wangila on 4 september 2021
 
 ## Description
 
@@ -30,7 +30,8 @@ The user will be met with the following commands while signing in:
 
 
 ## Set-up and Installation
-- Clone the Repo https://github.com/eliwangila/Passwordlocker.git
+- Git clone
+ - https://github.com/eliwangila/Passwordlocker.git
 - Install python 3.8
 - Run `python3.8 run.py`
 
